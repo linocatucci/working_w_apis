@@ -1,0 +1,19 @@
+{
+  "name": "working_with_apis",
+  "version": "1.0.0",
+  "description": "working with apis",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linocatucci/working_w_apis.git"
+  },
+  "author": "Lino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/linocatucci/working_w_apis/issues"
+  },
+  "homepage": "https://github.com/linocatucci/working_w_apis#readme"
+}
