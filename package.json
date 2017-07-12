@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/linocatucci/working_w_apis/issues"
   },
-  "homepage": "https://github.com/linocatucci/working_w_apis#readme"
+  "homepage": "https://github.com/linocatucci/working_w_apis#readme",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
+    "request": "^2.81.0"
+  }
 }
