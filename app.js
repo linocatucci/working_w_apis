@@ -15,11 +15,21 @@ app.get('/search', function (req, res) {
 
 app.get('/results', function (req, res) {
     request('http://www.omdbapi.com/?&apikey=ed6ba6e4&s=amsterdam:', function (error, response, body) {
-        res.redirect('hallo')
+        if (!error && response.statusCode == 200) {
+            var data = JSON.parse(body);
+            res.render('results', {
+                data: data
+            })
+        }
     });
 });
 
-var port = 3000;
-app.listen(port, function () {
-    console.log('Move App has started!');
-})
+// // bij cloud 9 met je dit gebruiken, dit is geen hardcoded
+app.listen(process.env.PORT, process.env.IP, function () {
+    console.log('Movie App has started!!')
+});
+
+// var port = 3000;
+// app.listen(port, function () {
+//     console.log('Movie App has started!');
+// })
