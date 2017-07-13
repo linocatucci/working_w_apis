@@ -14,9 +14,11 @@ app.get('/search', function (req, res) {
 })
 
 app.get('/results', function (req, res) {
-    res.send('results page!')
     request('http://www.omdbapi.com/?&apikey=ed6ba6e4&s=amsterdam:', function (error, response, body) {
-
+     if (!error && response.statusCode == 200) {
+    var data = JSON.parse(body);
+    res.render('results',{data:data})
+  }
     });
 });
 
