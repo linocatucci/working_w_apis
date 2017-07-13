@@ -20,7 +20,12 @@ app.get('/results', function (req, res) {
     });
 });
 
-var port = 3000;
-app.listen(port, function () {
-    console.log('Move App has started!');
-})
+// // bij cloud 9 met je dit gebruiken, dit is geen hardcoded
+app.listen(process.env.PORT, process.env.IP, function () {
+    console.log('Movie App has started!!')
+});
+
+// var port = 3000;
+// app.listen(port, function () {
+//     console.log('Movie App has started!');
+// })
