@@ -8,17 +8,20 @@ app.set('view engine', 'ejs');
 // s = search on title
 // http://www.omdbapi.com/?&apikey=ed6ba6e4&s=amsterdam
 
+var apikey = '&apikey=ed6ba6e4';
+
 app.get('/search', function (req, res) {
     res.render('search')
 })
 
 app.get('/results', function (req, res) {
-    request('http://www.omdbapi.com/?&apikey=ed6ba6e4&s=amsterdam:', function (error, response, body) {
+    console.log(req.query.search);
+    request('http://www.omdbapi.com/?&apikey=ed6ba6e4&s=' + req.query.search, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             var data = JSON.parse(body);
             res.render('results', {
                 data: data
-            })
+            });
         }
     });
 });
