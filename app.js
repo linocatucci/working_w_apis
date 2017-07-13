@@ -9,8 +9,7 @@ app.set('view engine', 'ejs');
 // http://www.omdbapi.com/?&apikey=ed6ba6e4&s=amsterdam
 
 app.get('/search', function (req, res) {
-    res.send('search page!')
-    //request('http:')
+    res.render('search')
 })
 
 app.get('/results', function (req, res) {
@@ -25,11 +24,11 @@ app.get('/results', function (req, res) {
 });
 
 // // bij cloud 9 met je dit gebruiken, dit is geen hardcoded
-app.listen(process.env.PORT, process.env.IP, function () {
-    console.log('Movie App has started!!')
-});
+// app.listen(process.env.PORT, process.env.IP, function () {
+//     console.log('Movie App has started!!')
+// });
 
-// var port = 3000;
-// app.listen(port, function () {
-//     console.log('Movie App has started!');
-// })
+var port = 3000;
+app.listen(port, function () {
+    console.log('Movie App has started!');
+});
