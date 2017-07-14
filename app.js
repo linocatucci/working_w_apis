@@ -10,6 +10,10 @@ app.set('view engine', 'ejs');
 
 var apikey = '&apikey=ed6ba6e4';
 
+app.get('/', function(req, res){
+    res.render('home');
+})
+
 app.get('/search', function (req, res) {
     res.render('search')
 })
@@ -27,11 +31,11 @@ app.get('/results', function (req, res) {
 });
 
 // // bij cloud 9 met je dit gebruiken, dit is geen hardcoded
-// app.listen(process.env.PORT, process.env.IP, function () {
-//     console.log('Movie App has started!!')
-// });
-
-var port = 3000;
-app.listen(port, function () {
-    console.log('Movie App has started!');
+app.listen(process.env.PORT, process.env.IP, function () {
+    console.log('Movie App has started!!')
 });
+
+// var port = 3000;
+// app.listen(port, function () {
+//     console.log('Movie App has started!');
+// });
